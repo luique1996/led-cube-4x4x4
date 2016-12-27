@@ -1,47 +1,45 @@
 ![uteq](c:\Users\LuisSolòrzano\Downloads\logoUTEQ2011agrupado.jpg)
 
-<h2 style="text-align:center">UNIVERSIDAD TÉCNICA ESTATAL DE QUEVEDO</h2>
 
-<h3 style="text-align:center">FACULTAD DE CIENCIAS DE LA INGENIERÍA</h3>
+#**<p style="text-align: center;">UNIVERSIDAD TÉCNICA ESTATAL DE QUEVEDO</p>**
 
-<h3 style="text-align:center">ESCUELA DE ELÉCTRICA</h3>
+##**<p style="text-align: center;">FACULTAD DE CIENCIAS DE LA INGENIERÍA</p>**
 
-<h3 style="text-align:center">CARRERA:</h3>
-
-<h4 style="text-align:center">INGENIERÍA EN TELEMÁTICA </h4>
-                                           
-
-<h3 style="text-align:center">UNIDAD DE APRENDIZAJE:</h3>
+###**<p style="text-align: center;">ESCUELA DE ELÉCTRICA</p>**
 
 
-<h4 style="text-align:center">INTERACCIÓN HOMBRE MÁQUINA</h4>
+**<p style="text-align: center;">CARRERA:</p>**
+
+<p style="text-align: center;">INGENIERÍA EN TELEMÁTICA</p>
 
 
-<h3 style="text-align:center">TEMA:</h3>
+**<p style="text-align: center;">UNIDAD DE APRENDIZAJE:</p>**
 
-<h4 style="text-align:center">CUBO LED 4X4X4 </h4>
-
-
-<h3 style="text-align:center">AUTORES:</h3>
-
-<h4 style="text-align:center">BRIONES BRAVO JHON KEVIN</h4>
-<h4 style="text-align:center">ESPINOZA MARTÍNEZ ÁLVARO DANIEL</h4>
-<h4 style="text-align:center">SOLÓRZANO CASTRO LUIS ENRIQUE</h4>
+<p style="text-align: center;">INTERACCIÓN HOMBRE MÁQUINA</p>
 
 
-<h3 style="text-align:center">DOCENTE:</h3>
+**<p style="text-align: center;">TEMA:</p>**
+
+<p style="text-align: center;">CUBO LED 4X4X4</p>
+
+**<p style="text-align: center;">INTEGRANTES:</p>**
 
 
-<h4 style="text-align:center">ING. PAULO CHILIGUANO</h4>
+<p style="text-align: center;">BRIONES BRAVO JHON KEVIN</p>
+
+<p style="text-align: center;">ESPINOZA MARTÍNEZ ÁLVARO DANIEL</p>
+
+<p style="text-align: center;">SOLÓRZANO CASTRO LUIS ENRIQUE</p>
+
+**<p style="text-align: center;">DOCENTE:</p>**
+
+<p style="text-align: center;">ING. PAULO CHILIGUANO</p>
 
 
-<h3 style="text-align:center">PERIÓDO ACADÉMICO</h3>
+**<p style="text-align: center;">QUEVEDO – LOS RIOS – ECUADOR</p>**
 
-
-<h4 style="text-align:center">2016 – 2017</h4>
-
-
-
+**<p style="text-align: center;">2016 – 2017</p>**
+ 
 
 ----------
 

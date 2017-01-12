@@ -57,7 +57,6 @@ Como anexo se deja en el siguiente link, el avance de la aplicación:
 
 * Su función es realizar el encendido y apagado de las secuencia de Led's de la matriz.
 + La conexión se realiza mediante un módulo Bluetooth.
-- Adicional se agregó que al momento de seleccionar la secuencia pueda ser simulada, dentro de la aplicación.
 
  Línk de la APP: [Cubo Led ](http://ai2.appinventor.mit.edu/?locale=en#4950908159655936)
 <http://ai2.appinventor.mit.edu/?locale=en#4950908159655936>

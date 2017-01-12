@@ -43,6 +43,7 @@ void setup() //setup() es la parte encargada de recoger la configuración
   pinMode(PinoA3, OUTPUT);
   pinMode(PinoA4, OUTPUT);
   pinMode(PinoA5, OUTPUT);
+
 }
 void loop() //loop() es la que contiene el programa que se ejecutará cíclicamente
 {
@@ -79,183 +80,709 @@ void splitString(char* data)
   Serial.flush();
 }
 
-void setLED(char* data)
+  void setLED(char* data)
 {
-  bool activo=false;
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ 
+
+  //secuencia encender toda la matriz
+  bool activo=false,botonpress=false;
+  int time=50;
+  
   if ((data[0] =='a') || (data[0] == 'A')){
+    
+      bool encendido=false;
+    for(int i=0; i<15; i++){
+      if((data[0] !='e') || (data[0] != 'E'))
+     {
+      if(encendido){
+        digitalWrite(PinoA2, LOW); 
+        digitalWrite(PinoA3, LOW); 
+        digitalWrite(Pino12, LOW); 
+        digitalWrite(Pino11, LOW); 
+        digitalWrite(Pino07, LOW); 
+        digitalWrite(Pino08, LOW); 
+        digitalWrite(Pino09, LOW); 
+        digitalWrite(Pino10, LOW); 
+        digitalWrite(Pino06, LOW); 
+        digitalWrite(Pino05, LOW); 
+        digitalWrite(Pino04, LOW); 
+        digitalWrite(Pino03, LOW); 
+        digitalWrite(PinoA0, LOW); 
+        digitalWrite(PinoA1, LOW); 
+        digitalWrite(Pino02, LOW); 
+        digitalWrite(Pino13, LOW);
+        encendido=false;
+      }
+      else{
+            int Ans = strtol(data+1, NULL, 10);
+            Ans = constrain(Ans,0,1);
+            activo=true;
+            digitalWrite(Pino13,Ans);
+            Serial.println(Ans);
+
+            //LED ENCENDIDO 15
+            int Ans1 = strtol(data+1, NULL, 10);
+             Ans1 = constrain(Ans1,0,1);
+            digitalWrite(Pino02,Ans1);
+            Serial.println(Ans1);
+
+              //LED ENCENDIDO 14
+              int Ans2 = strtol(data+1, NULL, 10);
+              Ans2 = constrain(Ans2,0,1);
+             digitalWrite(PinoA1,Ans2);
+             Serial.println(Ans2);
+    
+    //LED ENCENDIDO 13
+    int Ans3 = strtol(data+1, NULL, 10);
+    Ans3 = constrain(Ans3,0,1);
+    digitalWrite(PinoA0,Ans3);
+    Serial.print("Pino03 esta em: ");
+    Serial.println(Ans3);
+    
+    //LED ENCENDIDO 12
+    int Ans4 = strtol(data+1, NULL, 10);
+    Ans4 = constrain(Ans4,0,1);
+    activo=true;
+    digitalWrite(Pino03,Ans4);
+    Serial.println(Ans4);
+
+    //LED ENCENDIDO 11
+    int Ans5 = strtol(data+1, NULL, 10);
+    Ans5 = constrain(Ans5,0,1);
+    digitalWrite(Pino04,Ans5);
+    Serial.println(Ans5);
+
+    //LED ENCENDIDO 10
+    int Ans6 = strtol(data+1, NULL, 10);
+    Ans6 = constrain(Ans6,0,1);
+    digitalWrite(Pino05,Ans6);
+    Serial.println(Ans6);
+
+    //LED ENCENDIDO 9
+    int Ans7 = strtol(data+1, NULL, 10);
+    Ans7 = constrain(Ans7,0,1);
+    digitalWrite(Pino06,Ans7);
+    Serial.println(Ans7);
+
+    //la mitad de la matriz
+
+    //LED ENCENDIDO 8
+    int Ans8 = strtol(data+1, NULL, 10);
+    Ans8 = constrain(Ans8,0,1);
+    digitalWrite(Pino10,Ans1);
+    Serial.println(Ans8);
+
+    //LED ENCENDIDO 7
+    int Ans9 = strtol(data+1, NULL, 10);
+    Ans9 = constrain(Ans9,0,1);
+    digitalWrite(Pino09,Ans9);
+    Serial.println(Ans9);
+
+    //LED ENCENDIDO 6
+    int Ans10 = strtol(data+1, NULL, 10);
+    Ans3 = constrain(Ans10,0,1);
+    digitalWrite(Pino08,Ans10);
+    Serial.println(Ans10);
+   
+    //LED ENCENDIDO 5
+    int Ans11 = strtol(data+1, NULL, 10);
+    Ans11 = constrain(Ans11,0,1);
+    activo=true;
+    digitalWrite(Pino07,Ans11);
+    Serial.println(Ans11);
+
+    //LED ENCENDIDO 4
+    int Ans12 = strtol(data+1, NULL, 10);
+    Ans12 = constrain(Ans12,0,1);
+    digitalWrite(Pino11,Ans5);
+    Serial.println(Ans12);
+    
+    //LED ENCENDIDO 3
+    int Ans13 = strtol(data+1, NULL, 10);
+    Ans13 = constrain(Ans13,0,1);
+    digitalWrite(Pino12,Ans13);
+    Serial.println(Ans13);
+    
+    //LED ENCENDIDO 2
+    int Ans14 = strtol(data+1, NULL, 10);
+    Ans14 = constrain(Ans14,0,1);
+    digitalWrite(PinoA3,Ans14);
+    Serial.println(Ans14);
+
+     //LED ENCENDIDO 1
+    int Ans15 = strtol(data+1, NULL, 10);
+    Ans14 = constrain(Ans15,0,1);
+    digitalWrite(PinoA2,Ans15);
+    Serial.println(Ans15);
+    encendido=true;
+      }
+      delay(200);
+      
+      
+    }
+    else{
+      digitalWrite(PinoA2, LOW); 
+           digitalWrite(PinoA3, LOW); 
+           digitalWrite(Pino12, LOW); 
+           digitalWrite(Pino11, LOW); 
+           digitalWrite(Pino07, LOW); 
+           digitalWrite(Pino08, LOW); 
+           digitalWrite(Pino09, LOW); 
+           digitalWrite(Pino10, LOW); 
+           digitalWrite(Pino06, LOW); 
+           digitalWrite(Pino05, LOW); 
+            digitalWrite(Pino04, LOW); 
+           digitalWrite(Pino03, LOW); 
+           digitalWrite(PinoA0, LOW); 
+            digitalWrite(PinoA1, LOW); 
+           digitalWrite(Pino02, LOW); 
+           digitalWrite(Pino13, LOW);
+          break;
+          encendido=false;
+    }
+    }  
+  }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Marea 
+  if ((data[0] =='b') || (data[0] == 'B')){
+    botonpress=false;
+    //LED ENCENDIDO 16
+    
+   bool en=false;
+    for(int i=0; i<15; i++){
+    if((data[0] !='e') || (data[0] != 'E'))
+    {  
+    if(en){
+    digitalWrite(PinoA2, LOW); 
+    digitalWrite(PinoA3, LOW); 
+    digitalWrite(Pino12, LOW); 
+    digitalWrite(Pino11, LOW); 
+    digitalWrite(Pino07, LOW); 
+    digitalWrite(Pino08, LOW); 
+    digitalWrite(Pino09, LOW); 
+    digitalWrite(Pino10, LOW); 
+    digitalWrite(Pino06, LOW); 
+    digitalWrite(Pino05, LOW); 
+    digitalWrite(Pino04, LOW); 
+    digitalWrite(Pino03, LOW); 
+    digitalWrite(PinoA0, LOW); 
+    digitalWrite(PinoA1, LOW); 
+    digitalWrite(Pino02, LOW); 
+    digitalWrite(Pino13, LOW);
+    en=false;
+      }
+      else{
     int Ans = strtol(data+1, NULL, 10);
     Ans = constrain(Ans,0,1);
     activo=true;
     digitalWrite(Pino13,Ans);
-    Serial.print("Pino02 esta em: ");
     Serial.println(Ans);
-    
+
+    //LED ENCENDIDO 15
     int Ans1 = strtol(data+1, NULL, 10);
     Ans1 = constrain(Ans1,0,1);
     digitalWrite(Pino02,Ans1);
-    Serial.print("Pino03 esta em: ");
     Serial.println(Ans1);
 
-     int Ans2 = strtol(data+1, NULL, 10);
+    //LED ENCENDIDO 14
+    int Ans2 = strtol(data+1, NULL, 10);
     Ans2 = constrain(Ans2,0,1);
-    digitalWrite(PinoA0,Ans2);
-    Serial.print("Pino03 esta em: ");
+    digitalWrite(PinoA1,Ans2);
     Serial.println(Ans2);
-
-     int Ans3 = strtol(data+1, NULL, 10);
+    
+    //LED ENCENDIDO 13
+    int Ans3 = strtol(data+1, NULL, 10);
     Ans3 = constrain(Ans3,0,1);
-    digitalWrite(PinoA1,Ans3);
+    digitalWrite(PinoA0,Ans3);
     Serial.print("Pino03 esta em: ");
     Serial.println(Ans3);
-    
-    delay(1000);
 
-  int Ans4 = strtol(data+1, NULL, 10);
+    delay(200);
+
+ //LED ENCENDIDO 12
+    int Ans4 = strtol(data+1, NULL, 10);
     Ans4 = constrain(Ans4,0,1);
     activo=true;
-    digitalWrite(Pino06,Ans4);
-    Serial.print("Pino02 esta em: ");
+    digitalWrite(Pino03,Ans4);
     Serial.println(Ans4);
-    
+
+    //LED ENCENDIDO 11
     int Ans5 = strtol(data+1, NULL, 10);
     Ans5 = constrain(Ans5,0,1);
-    digitalWrite(Pino05,Ans5);
-    Serial.print("Pino03 esta em: ");
+    digitalWrite(Pino04,Ans5);
     Serial.println(Ans5);
 
-     int Ans6 = strtol(data+1, NULL, 10);
+    //LED ENCENDIDO 10
+    int Ans6 = strtol(data+1, NULL, 10);
     Ans6 = constrain(Ans6,0,1);
-    digitalWrite(Pino04,Ans6);
-    Serial.print("Pino03 esta em: ");
+    digitalWrite(Pino05,Ans6);
     Serial.println(Ans6);
 
-     int Ans7 = strtol(data+1, NULL, 10);
+    //LED ENCENDIDO 9
+    int Ans7 = strtol(data+1, NULL, 10);
     Ans7 = constrain(Ans7,0,1);
-    digitalWrite(Pino03,Ans7);
-    Serial.print("Pino03 esta em: ");
+    digitalWrite(Pino06,Ans7);
     Serial.println(Ans7);
-    
-   Serial.write(0x0d);
+
+    delay (200);
+
+        //LED ENCENDIDO 8
+    int Ans8 = strtol(data+1, NULL, 10);
+    Ans8 = constrain(Ans8,0,1);
+    digitalWrite(Pino10,Ans8);
+    Serial.println(Ans8);
+
+    //LED ENCENDIDO 7
+    int Ans9 = strtol(data+1, NULL, 10);
+    Ans9 = constrain(Ans9,0,1);
+    digitalWrite(Pino09,Ans9);
+    Serial.println(Ans9);
+
+    //LED ENCENDIDO 6
+    int Ans10 = strtol(data+1, NULL, 10);
+    Ans3 = constrain(Ans10,0,1);
+    digitalWrite(Pino08,Ans10);
+    Serial.println(Ans10);
+   
+    //LED ENCENDIDO 5
+    int Ans11 = strtol(data+1, NULL, 10);
+    Ans11 = constrain(Ans11,0,1);
+    activo=true;
+    digitalWrite(Pino07,Ans11);
+    Serial.println(Ans11);  
+
+    delay(200);
 
     
+    //LED ENCENDIDO 4
+    int Ans12 = strtol(data+1, NULL, 10);
+    Ans12 = constrain(Ans12,0,1);
+    digitalWrite(Pino11,Ans12);
+    Serial.println(Ans12);
+    
+    //LED ENCENDIDO 3
+    int Ans13 = strtol(data+1, NULL, 10);
+    Ans13 = constrain(Ans13,0,1);
+    digitalWrite(Pino12,Ans13);
+    Serial.println(Ans13);
+    
+    //LED ENCENDIDO 2
+    int Ans14 = strtol(data+1, NULL, 10);
+    Ans14 = constrain(Ans14,0,1);
+    digitalWrite(PinoA3,Ans14);
+    Serial.println(Ans14);
+
+     //LED ENCENDIDO 1
+    int Ans15 = strtol(data+1, NULL, 10);
+    Ans14 = constrain(Ans15,0,1);
+    digitalWrite(PinoA2,Ans15);
+    Serial.println(Ans15);
+        en=true;
+    
+      }
+       delay(time);
+      }
+      else
+      {
+         digitalWrite(PinoA2, LOW); 
+           digitalWrite(PinoA3, LOW); 
+           digitalWrite(Pino12, LOW); 
+           digitalWrite(Pino11, LOW); 
+           digitalWrite(Pino07, LOW); 
+           digitalWrite(Pino08, LOW); 
+           digitalWrite(Pino09, LOW); 
+           digitalWrite(Pino10, LOW); 
+           digitalWrite(Pino06, LOW); 
+           digitalWrite(Pino05, LOW); 
+            digitalWrite(Pino04, LOW); 
+           digitalWrite(Pino03, LOW); 
+           digitalWrite(PinoA0, LOW); 
+            digitalWrite(PinoA1, LOW); 
+           digitalWrite(Pino02, LOW); 
+           digitalWrite(Pino13, LOW);
+          break;
+          en=false;
+        
+      }
+    }
   }
-  if ((data[0] =='b') || (data[0] == 'B')){
-    int Ans = strtol(data+1, NULL, 10);
-    Ans = constrain(Ans,0,255);
-    analogWrite(Pino03, Ans);
-    Serial.print("Pino03 esta em: ");
-    Serial.println(Ans);
-  }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// SNAKE
   if ((data[0] =='c') || (data[0] == 'C')){
+         //LED ENCENDIDO 1
+         botonpress=false;
+            bool en=false;
+    for(int i=0; i<10; i++){
+      if((data[0] !='e') || (data[0] != 'E'))
+    {  
+      if(en){
+    digitalWrite(PinoA2, LOW); 
+    digitalWrite(PinoA3, LOW); 
+    digitalWrite(Pino12, LOW); 
+    digitalWrite(Pino11, LOW); 
+    digitalWrite(Pino07, LOW); 
+    digitalWrite(Pino08, LOW); 
+    digitalWrite(Pino09, LOW); 
+    digitalWrite(Pino10, LOW); 
+    digitalWrite(Pino06, LOW); 
+    digitalWrite(Pino05, LOW); 
+    digitalWrite(Pino04, LOW); 
+    digitalWrite(Pino03, LOW); 
+    digitalWrite(PinoA0, LOW); 
+    digitalWrite(PinoA1, LOW); 
+    digitalWrite(Pino02, LOW); 
+    digitalWrite(Pino13, LOW);
+    en=false;
+      }
+      else
+      {
+    int Ans15 = strtol(data+1, NULL, 10);
+    Ans15 = constrain(Ans15,0,1);
+    digitalWrite(PinoA2,Ans15);
+    Serial.println(Ans15);
+
+    delay(200);
+
+    //LED ENCENDIDO 2
+    int Ans14 = strtol(data+1, NULL, 10);
+    Ans14 = constrain(Ans14,0,1);
+    digitalWrite(PinoA3,Ans14);
+    Serial.println(Ans14);
+
+    delay(200);
+
+    //LED ENCENDIDO 3
+    int Ans13 = strtol(data+1, NULL, 10);
+    Ans13 = constrain(Ans13,0,1);
+    digitalWrite(Pino12,Ans13);
+    Serial.println(Ans13);
+
+    delay(200);
+
+        //LED ENCENDIDO 4
+    int Ans12 = strtol(data+1, NULL, 10);
+    Ans12 = constrain(Ans12,0,1);
+    digitalWrite(Pino11,Ans12);
+    Serial.println(Ans12);
+    
+     delay(200);
+
+      //LED ENCENDIDO 8
+    int Ans8 = strtol(data+1, NULL, 10);
+    Ans8 = constrain(Ans8,0,1);
+    digitalWrite(Pino10,Ans8);
+    Serial.println(Ans8);
+     delay(200);
+       
+    //LED ENCENDIDO 7
+    int Ans9 = strtol(data+1, NULL, 10);
+    Ans9 = constrain(Ans9,0,1);
+    digitalWrite(Pino09,Ans9);
+    Serial.println(Ans9);
+        delay(200);
+     
+          //LED ENCENDIDO 6
+    int Ans10 = strtol(data+1, NULL, 10);
+    Ans10 = constrain(Ans10,0,1);
+    digitalWrite(Pino08,Ans10);
+    Serial.println(Ans10);
+ delay(200);
+            //LED ENCENDIDO 5
+    int Ans11 = strtol(data+1, NULL, 10);
+    Ans11 = constrain(Ans11,0,1);
+    activo=true;
+    digitalWrite(Pino07,Ans11);
+    Serial.println(Ans11);
+ delay(200);
+         //LED ENCENDIDO 9
+    int Ans7 = strtol(data+1, NULL, 10);
+    Ans7 = constrain(Ans7,0,1);
+    digitalWrite(Pino06,Ans7);
+    Serial.println(Ans7);
+     delay(200);
+
+         //LED ENCENDIDO 10
+    int Ans6 = strtol(data+1, NULL, 10);
+    Ans6 = constrain(Ans6,0,1);
+    digitalWrite(Pino05,Ans6);
+    Serial.println(Ans6);
+     delay(200);
+
+    
+         //LED ENCENDIDO 11
+    int Ans5 = strtol(data+1, NULL, 10);
+    Ans5 = constrain(Ans5,0,1);
+    digitalWrite(Pino04,Ans5);
+    Serial.println(Ans5);
+    
+     delay(200);
+
+      //LED ENCENDIDO 12
+    int Ans4 = strtol(data+1, NULL, 10);
+    Ans4 = constrain(Ans4,0,1);
+    activo=true;
+    digitalWrite(Pino03,Ans4);
+    Serial.println(Ans4);
+
+         delay(200);
+
+         //LED ENCENDIDO 16
     int Ans = strtol(data+1, NULL, 10);
     Ans = constrain(Ans,0,1);
-    digitalWrite(Pino04, Ans);
-    Serial.print("Pino04 esta em: ");
+    activo=true;
+    digitalWrite(Pino13,Ans);
     Serial.println(Ans);
+
+        
+     delay(200);
+         //LED ENCENDIDO 15
+    int Ans1 = strtol(data+1, NULL, 10);
+    Ans1 = constrain(Ans1,0,1);
+    digitalWrite(Pino02,Ans1);
+    Serial.println(Ans1);
+
+
+        delay(200);
+
+     
+    //LED ENCENDIDO 14
+    int Ans2 = strtol(data+1, NULL, 10);
+    Ans2 = constrain(Ans2,0,1);
+    digitalWrite(PinoA1,Ans2);
+    Serial.println(Ans2);
+
+    
+   delay(200);
+
+         //LED ENCENDIDO 13
+    int Ans3 = strtol(data+1, NULL, 10);
+    Ans3 = constrain(Ans3,0,1);
+    digitalWrite(PinoA0,Ans3);
+    Serial.print("Pino03 esta em: ");
+    Serial.println(Ans3);
+    en=true;
+      }
+      
+    
+   delay(time);
+    }
+    else{
+      digitalWrite(PinoA2, LOW); 
+           digitalWrite(PinoA3, LOW); 
+           digitalWrite(Pino12, LOW); 
+           digitalWrite(Pino11, LOW); 
+           digitalWrite(Pino07, LOW); 
+           digitalWrite(Pino08, LOW); 
+           digitalWrite(Pino09, LOW); 
+           digitalWrite(Pino10, LOW); 
+           digitalWrite(Pino06, LOW); 
+           digitalWrite(Pino05, LOW); 
+            digitalWrite(Pino04, LOW); 
+           digitalWrite(Pino03, LOW); 
+           digitalWrite(PinoA0, LOW); 
+            digitalWrite(PinoA1, LOW); 
+           digitalWrite(Pino02, LOW); 
+           digitalWrite(Pino13, LOW);
+          break;
+          en=false;
+    }
+    delay(time);
+    }
+    
   }
+
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// LLUVIA
   if ((data[0] =='d') || (data[0] == 'D')){
-    int Ans = strtol(data+1, NULL, 10);
-    Ans = constrain(Ans,0,255);
-    analogWrite(Pino05, Ans);
-    Serial.print("Pino05 esta em: ");
-    Serial.println(Ans);
-  }
-  if ((data[0] =='e') || (data[0] == 'E')){
-    int Ans = strtol(data+1, NULL, 10);
-    Ans = constrain(Ans,0,255);
-    analogWrite(Pino06, Ans);
-    Serial.print("Pino06 esta em: ");
-    Serial.println(Ans);
-  }
-  if ((data[0] =='f') || (data[0] == 'F')){
+     //do{
+       bool en=false;
+       
+       for(int i=0;i<20;i++){
+         if((data[0] !='e') || (data[0] != 'E'))
+         {
+           if(en){
+           digitalWrite(PinoA2, LOW); 
+           digitalWrite(PinoA3, LOW); 
+           digitalWrite(Pino12, LOW); 
+           digitalWrite(Pino11, LOW); 
+           digitalWrite(Pino07, LOW); 
+           digitalWrite(Pino08, LOW); 
+           digitalWrite(Pino09, LOW); 
+           digitalWrite(Pino10, LOW); 
+           digitalWrite(Pino06, LOW); 
+           digitalWrite(Pino05, LOW); 
+            digitalWrite(Pino04, LOW); 
+           digitalWrite(Pino03, LOW); 
+           digitalWrite(PinoA0, LOW); 
+            digitalWrite(PinoA1, LOW); 
+           digitalWrite(Pino02, LOW); 
+           digitalWrite(Pino13, LOW);
+            en=false;
+          }
+          else{
+             int Ans15 = strtol(data+1, NULL, 10);
+    Ans15 = constrain(Ans15,0,1);
+    digitalWrite(PinoA2,Ans15);
+    Serial.println(Ans15);
+
+    delay(50);
+
+    //LED ENCENDIDO 2
+    int Ans14 = strtol(data+1, NULL, 10);
+    Ans14 = constrain(Ans14,0,1);
+    digitalWrite(Pino07,Ans14);
+    Serial.println(Ans14);
+
+    delay(50);
+
+    //LED ENCENDIDO 3
+    int Ans13 = strtol(data+1, NULL, 10);
+    Ans13 = constrain(Ans13,0,1);
+    digitalWrite(Pino06,Ans13);
+    Serial.println(Ans13);
+
+    delay(50);
+
+        //LED ENCENDIDO 4
+    int Ans12 = strtol(data+1, NULL, 10);
+    Ans12 = constrain(Ans12,0,1);
+    digitalWrite(PinoA0,Ans12);
+    Serial.println(Ans12);
+    
+     delay(50);
+
+      //LED ENCENDIDO 8
+    int Ans8 = strtol(data+1, NULL, 10);
+    Ans8 = constrain(Ans8,0,1);
+    digitalWrite(PinoA3,Ans8);
+    Serial.println(Ans8);
+     delay(50);
+       
+    //LED ENCENDIDO 7
+    int Ans9 = strtol(data+1, NULL, 10);
+    Ans9 = constrain(Ans9,0,1);
+    digitalWrite(Pino08,Ans9);
+    Serial.println(Ans9);
+        delay(50);
+     
+          //LED ENCENDIDO 6
+    int Ans10 = strtol(data+1, NULL, 10);
+    Ans10 = constrain(Ans10,0,1);
+    digitalWrite(Pino05,Ans10);
+    Serial.println(Ans10);
+ delay(50);
+            //LED ENCENDIDO 5
+    int Ans11 = strtol(data+1, NULL, 10);
+    Ans11 = constrain(Ans11,0,1);
+    activo=true;
+    digitalWrite(PinoA1,Ans11);
+    Serial.println(Ans11);
+ delay(50);
+         //LED ENCENDIDO 9
+    int Ans7 = strtol(data+1, NULL, 10);
+    Ans7 = constrain(Ans7,0,1);
+    digitalWrite(Pino12,Ans7);
+    Serial.println(Ans7);
+     delay(50);
+
+         //LED ENCENDIDO 10
+    int Ans6 = strtol(data+1, NULL, 10);
+    Ans6 = constrain(Ans6,0,1);
+    digitalWrite(Pino09,Ans6);
+    Serial.println(Ans6);
+     delay(50);
+
+    
+         //LED ENCENDIDO 11
+    int Ans5 = strtol(data+1, NULL, 10);
+    Ans5 = constrain(Ans5,0,1);
+    digitalWrite(Pino04,Ans5);
+    Serial.println(Ans5);
+    
+     delay(50);
+
+      //LED ENCENDIDO 12
+    int Ans4 = strtol(data+1, NULL, 10);
+    Ans4 = constrain(Ans4,0,1);
+    activo=true;
+    digitalWrite(Pino02,Ans4);
+    Serial.println(Ans4);
+
+         delay(50);
+
+         //LED ENCENDIDO 16
     int Ans = strtol(data+1, NULL, 10);
     Ans = constrain(Ans,0,1);
-    digitalWrite(Pino07, Ans);
-    Serial.print("Pino07 esta em: ");
+    activo=true;
+    digitalWrite(Pino11,Ans);
     Serial.println(Ans);
+
+        
+     delay(50);
+         //LED ENCENDIDO 15
+    int Ans1 = strtol(data+1, NULL, 10);
+    Ans1 = constrain(Ans1,0,1);
+    digitalWrite(Pino10,Ans1);
+    Serial.println(Ans1);
+
+
+        delay(50);
+
+     
+    //LED ENCENDIDO 14
+    int Ans2 = strtol(data+1, NULL, 10);
+    Ans2 = constrain(Ans2,0,1);
+    digitalWrite(Pino03,Ans2);
+    Serial.println(Ans2);
+
+    
+   delay(50);
+
+         //LED ENCENDIDO 13
+    int Ans3 = strtol(data+1, NULL, 10);
+    Ans3 = constrain(Ans3,0,1);
+    digitalWrite(Pino13,Ans3);
+    Serial.print("Pino03 esta em: ");
+    Serial.println(Ans3);
+    en=true;
+          }
+        }
+        
+        else{
+          digitalWrite(PinoA2, LOW); 
+           digitalWrite(PinoA3, LOW); 
+           digitalWrite(Pino12, LOW); 
+           digitalWrite(Pino11, LOW); 
+           digitalWrite(Pino07, LOW); 
+           digitalWrite(Pino08, LOW); 
+           digitalWrite(Pino09, LOW); 
+           digitalWrite(Pino10, LOW); 
+           digitalWrite(Pino06, LOW); 
+           digitalWrite(Pino05, LOW); 
+            digitalWrite(Pino04, LOW); 
+           digitalWrite(Pino03, LOW); 
+           digitalWrite(PinoA0, LOW); 
+            digitalWrite(PinoA1, LOW); 
+           digitalWrite(Pino02, LOW); 
+           digitalWrite(Pino13, LOW);
+          break;
+          en=false;
+        }
+        delay(time);
+       }
+       
+       
+     //}while((data[0] !='c') || (data[0] != 'C'));
+
+         
   }
-  if ((data[0] =='g') || (data[0] == 'G')){
-    int Ans = strtol(data+1, NULL, 10);
-    Ans = constrain(Ans,0,1);
-    digitalWrite(Pino08, Ans);
-    Serial.print("Pino08 esta em: ");
-    Serial.println(Ans);
+  
+  //DETENER
+  if ((data[0] =='e') || (data[0] == 'E')){ 
+      time=0;     
   }
-  if ((data[0] =='h') || (data[0] == 'H')){
-    int Ans = strtol(data+1, NULL, 10);
-    Ans = constrain(Ans,0,255);
-    analogWrite(Pino09, Ans);
-    Serial.print("Pino09 esta em: ");
-    Serial.println(Ans);
-  }
-  if ((data[0] =='i') || (data[0] == 'I')){
-    int Ans = strtol(data+1, NULL, 10);
-    Ans = constrain(Ans,0,255);
-    analogWrite(Pino10, Ans);
-    Serial.print("Pino10 esta em: ");
-    Serial.println(Ans);
-  }
-  if ((data[0] =='j') || (data[0] == 'J')){
-    int Ans = strtol(data+1, NULL, 10);
-    Ans = constrain(Ans,0,255);
-    analogWrite(Pino11, Ans);
-    Serial.print("Pino11 esta em: ");
-    Serial.println(Ans);
-  }
-  if ((data[0] =='k') || (data[0] == 'K')){
-    int Ans = strtol(data+1, NULL, 10);
-    Ans = constrain(Ans,0,1);
-    digitalWrite(Pino12, Ans);
-    Serial.print("Pino12 esta em: ");
-    Serial.println(Ans);
-  }
-  if ((data[0] =='l') || (data[0] == 'L')){
-    int Ans = strtol(data+1, NULL, 10);
-    Ans = constrain(Ans,0,1);
-    digitalWrite(Pino13, Ans);
-    Serial.print("Pino13 esta em: ");
-    Serial.println(Ans);
-  }
-  if ((data[0] =='m') || (data[0] == 'M')){
-    int Ans = strtol(data+1, NULL, 10);
-    Ans = constrain(Ans,0,1);
-    digitalWrite(PinoA0, Ans);
-    Serial.print("PinoA0 esta em: ");
-    Serial.println(Ans);
-  }
-  if ((data[0] =='n') || (data[0] == 'N')){
-    int Ans = strtol(data+1, NULL, 10);
-    Ans = constrain(Ans,0,1);
-    digitalWrite(PinoA1, Ans);
-    Serial.print("PinoA1 esta em: ");
-    Serial.println(Ans);
-  }
-  if ((data[0] =='o') || (data[0] == 'O')){
-    int Ans = strtol(data+1, NULL, 10);
-    Ans = constrain(Ans,0,1);
-    digitalWrite(PinoA2, Ans);
-    Serial.print("PinoA2 esta em: ");
-    Serial.println(Ans);
-  }
-  if ((data[0] =='p') || (data[0] == 'P')){
-    int Ans = strtol(data+1, NULL, 10);
-    Ans = constrain(Ans,0,1);
-    digitalWrite(PinoA3, Ans);
-    Serial.print("PinoA3 esta em: ");
-    Serial.println(Ans);
-  }
-  if ((data[0] =='q') || (data[0] == 'Q')){
-    int Ans = strtol(data+1, NULL, 10);
-    Ans = constrain(Ans,0,1);
-    digitalWrite(PinoA4, Ans);
-    Serial.print("PinoA4 esta em: ");
-    Serial.println(Ans);
-  }
-  if ((data[0] =='r') || (data[0] == 'R')){
-    int Ans = strtol(data+1, NULL, 10);
-    Ans = constrain(Ans,0,1);
-    digitalWrite(PinoA5, Ans);
-    Serial.print("PinoA5 esta em: ");
-    Serial.println(Ans);
-  } 
+  
 }
